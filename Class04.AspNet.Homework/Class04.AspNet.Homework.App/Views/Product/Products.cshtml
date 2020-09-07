@@ -1,0 +1,20 @@
+﻿@model ProductListVM
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h2>Our products</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class=" alert alert-info">
+        @ViewBag.Message
+    </div>
+}
+
+@foreach (var product in Model.Products)
+{
+    <partial name="_seeProductDetails" for="@product" />
+}
+
+<a asp-controller="Product" asp-action="CreateProduct" class="btn btn-success">Create Product</a>
