@@ -1,0 +1,21 @@
+﻿@model ProductVM
+@{
+    ViewData["Title"] = "Edit Product";
+}
+
+<h3>Edit Product: @Model.ProductName </h3>
+<form asp-route="Edit" method="post">
+    <label asp-for="ProductName"></label>
+    <input asp-for="ProductName" /><br />
+
+    <label asp-for="Description"></label>
+    <input asp-for="Description" /><br />
+
+    <label asp-for="ProductPrice"></label>
+    <input asp-for="ProductPrice" /><br />
+
+    <label asp-for="Category"></label>
+    <select asp-for="Category" asp-items="Html.GetEnumSelectList<Category>()"></select><br />
+
+    <button type="submit" class="btn btn-success">Edit</button>
+</form>

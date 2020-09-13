@@ -1,0 +1,21 @@
+﻿@model ProductVM
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+@if(ViewBag.Error != null)
+{
+    <div class="alert alert-danger" >
+        ViewBag.Error
+    </div>
+}
+
+<h2>Product Details</h2>
+<h3>Name: @Model.ProductName</h3>
+<p>Description: @Model.Description</p>
+<p>Category: @Model.Category</p>
+<p>Price: @Model.ProductPrice $</p>
+
+<a asp-controller="Product" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit Product</a>
+<a asp-controller="Product" asp-action="Index" class="btn btn-default">Back</a>
+
