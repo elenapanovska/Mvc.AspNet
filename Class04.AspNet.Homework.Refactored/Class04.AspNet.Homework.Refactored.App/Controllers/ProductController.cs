@@ -11,11 +11,11 @@ namespace Class04.AspNet.Homework.Refactored.App.Controllers
 {
     public class ProductController : Controller
     {
-        private static readonly IProductService _productService;
+        private IProductService _productService;
 
-        static ProductController()
+        public ProductController(IProductService productService)
         {
-            _productService = new ProductService();
+            _productService = productService;
         }
 
         [HttpGet("products")]

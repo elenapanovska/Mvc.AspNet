@@ -10,11 +10,11 @@ namespace Class04.AspNet.Homework.Refactored.Business.Services
 {
     public class ProductService : IProductService
     {
-        private readonly IRepository<Product> _productRepository;
+        private IRepository<Product> _productRepository;
 
-        public ProductService()
+        public ProductService(IRepository<Product> productRepository)
         {
-            _productRepository = new ProductRepository();
+            _productRepository = productRepository;
         }
         public List<ProductVM> GetAllProducts()
         {
